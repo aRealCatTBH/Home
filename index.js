@@ -1,7 +1,6 @@
 function init() {
     getName()
     getForcast()
-    getTheme()
 }
 
 function getName() {
@@ -25,29 +24,11 @@ function getForcast() {
 
 }
 
-function getTheme() {
-    if (!localStorage.getItem("theme")) {
-        localStorage.setItem("theme", "dark")
-    }
-    document.getElementsByTagName("html")[0].setAttribute("data-theme", localStorage.getItem("theme"))
-}
-
 init()
 
 function set(id, innerText) {
     document.getElementById(id).setAttribute("aria-busy", false)
     document.getElementById(id).innerText = innerText
-}
-
-function toggleTheme() {
-    const theme = localStorage.getItem("theme")
-    if (theme == "light") {
-        localStorage.setItem("theme", "dark")
-    }
-    else {
-        localStorage.setItem("theme", "light")
-    }
-    getTheme()
 }
 
 function href(link) {
