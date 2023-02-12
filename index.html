@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico/css/pico.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Welcome Home</title>
+</head>
+
+<body>
+    <center>
+        <button class="secondary outline" onclick="toggleTheme()"></button>
+        <article>
+            Welcome Home,
+            <span aria-busy="true" id="name"></span>
+            .
+        </article>
+        <hr>
+        <article>
+            Currently
+            <span aria-busy="true" id="condition"></span>
+            <br>
+            Feels like
+            <span aria-busy="true" id="feel"></span>
+            , but its actually
+            <span aria-busy="true" id="temp"></span>
+            .
+        </article>
+        <article class="grid">
+            <article>
+                Developer
+                <br><br>
+                <button onclick="href('https://github.com')" class="contrast outline">GitHub</button>
+                <br>
+                <button onclick="href('https://developer.mozilla.org/en-US')" class="contrast outline">MDN</button>
+                <br>
+                <button onclick="href('https://stackoverflow.com')" class="contrast outline">Stack Overflow</button>
+            </article>
+            <article>
+                Social
+                <br><br>
+                <button onclick="href('discord://')" class="contrast outline">Discord</button>
+                <br>
+                <button onclick="href('https://twitter.com')" class="contrast outline">Twitter</button>
+                <br>
+                <button onclick="href('https://youtube.com')" class="contrast outline">YouTube</button>
+            </article>
+            <article>
+                Gaming
+                <br><br>
+                <button onclick="href('steam://open/library')" class="contrast outline">Steam</button>
+                <br>
+                <button onclick="href('oculus://')" class="contrast outline">Oculus</button>
+                <br>
+                <button onclick="href('https://twitch.tv')" class="contrast outline">Twitch</button>
+            </article>
+            <article>
+                School
+                <br><br>
+                <button onclick="href('https://classroom.google.com')" class="contrast outline">Google
+                    Classroom</button>
+                <br>
+                <button onclick="href('https://drive.google.com')" class="contrast outline">Google Drive</button>
+                <br>
+                <button onclick="href('https://canva.com')" class="contrast outline">Canva</button>
+            </article>
+        </article>
+        <button class="secondary outline" onclick="devReload()"></button>
+        <script src="index.js"></script>
+</body>
+
+</html>
