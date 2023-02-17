@@ -2,10 +2,11 @@ function init() {
     getName()
     getForcast()
     getLocation()
+    document.getElementsByTagName("input")[0].click()
 }
 
 function getName() {
-    if (!localStorage.getItem("name")) {
+    if (!localStorage.getItem("name") || localStorage.getItem("name") == "null") {
         localStorage.setItem("name", prompt("What's your name?"))
         return location.reload()
     }
@@ -13,7 +14,7 @@ function getName() {
 }
 
 function getLocation() {
-    if (!localStorage.getItem("location")) {
+    if (!localStorage.getItem("location") || localStorage.getItem("location") == "null") {
         localStorage.setItem("location", prompt("Enter your location ie: Frankfurt, Germany"))
         return location.reload()
     }
@@ -41,4 +42,13 @@ function set(id, innerText) {
 
 function href(link) {
     location.replace(link)
+}
+
+function search(event) {
+    if (event.keyCode == 13) {
+        let url = new URL("https://duckduckgo.com")
+        url.searchParams.append("q", event.target.value)
+        event.target.value = ""
+        location.href = url.href
+    }
 }
