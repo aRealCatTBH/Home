@@ -1,6 +1,7 @@
 function init() {
     getName()
     getForcast()
+    getLocation()
 }
 
 function getName() {
@@ -11,8 +12,15 @@ function getName() {
     set("name", localStorage.getItem("name"))
 }
 
+function getLocation() {
+    if (!localStorage.getItem("location")) {
+        localStorage.setItem("location", prompt("Enter your location ie: Frankfurt, Germany"))
+        return location.reload()
+    }
+}
+
 function getForcast() {
-    fetch("https://wttr.in/?format=%c+%C\\%t\\%f")
+    fetch("https://wttr.in/" + localStorage.getItem("location") + "?format=%c+%C\\%t\\%f")
         .then(d => d.text())
         .then(d => {
             d = d.split("\\")
